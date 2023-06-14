@@ -24,7 +24,7 @@ create table Usuario
 	avaliacao_Usuario int null ,
 	projRealizado_Usuario int null ,
 	img_Usuario longblob null ,
-	curriculo_Usuario longblob not null ,
+	curriculo_Usuario longblob null ,
 	status_Usuario varchar(25) not null ,
 	obs_Usuario varchar(255) null
 );
