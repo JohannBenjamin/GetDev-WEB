@@ -21,8 +21,8 @@ create table Usuario
 	descricao_Usuario varchar(255) null ,
 	nascimento_Usuario datetime not null ,
 	cadastro_Usuario timestamp not null ,
-	avaliacao_Usuario int null ,
-	projRealizado_Usuario int null ,
+	avaliacao_Usuario int default 0 null ,
+	projRealizado_Usuario int default 0 null ,
 	img_Usuario longblob null ,
 	curriculo_Usuario longblob null ,
 	status_Usuario varchar(25) not null ,
@@ -95,4 +95,18 @@ create table Proposta
     
     constraint Fk_Id_Usuario_Proposta foreign key (id_Usuario_Proposta) references Usuario(id_Usuario),
     constraint Fk_Id_Servico_Proposta foreign key (id_Servico_Proposta) references Servico(id_Servico)
+);
+
+create table Mensagem
+(
+	id_Mensagem	int	not null auto_increment	primary key,
+	id_Proposta_Mensagem int not null,
+	texto_Mensagem varchar(255) not null,
+	registro_Mensagem timestamp not null,
+	remetente_Mensagem int not null,
+	arquivo_Mensagem longblob null,
+	status_Mensagem	varchar(25)	not null,
+	obs_Mensagem varchar(255) null,
+    
+    constraint Fk_Id_Proposta_Mensagem foreign key (id_Proposta_Mensagem) references Proposta(id_Proposta)
 );
