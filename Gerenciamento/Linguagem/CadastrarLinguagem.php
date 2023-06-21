@@ -6,7 +6,7 @@
         $situacao = FALSE;
 
         if(empty($_POST['txtNome']) ||
-        empty($_POST['txtStatus']) ||)
+        empty($_POST['txtStatus']))
         {
             $msg = 'Erro! Preencha todos os campos para Cadastrar uma Linguagem';
         }
