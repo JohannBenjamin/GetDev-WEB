@@ -17,7 +17,7 @@ create table Usuario
 	celular_Usuario char(14) not null ,
 	email_Usuario varchar(100) not null unique ,
 	usuario_Usuario varchar(25) not null unique ,
-	senha_Usuario varchar(25) not null ,
+	senha_Usuario varchar(35) not null ,
 	descricao_Usuario varchar(255) null ,
 	nascimento_Usuario datetime not null ,
 	cadastro_Usuario timestamp not null ,
