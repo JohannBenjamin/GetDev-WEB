@@ -76,7 +76,7 @@
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12">
-                    <textarea name="txtObs" id="txtObs" rows="5" class="form-control"><?=$obsCampo?></textarea>
+                    <textarea name="txtObs" id="txtObs" rows="5" class="form-control" placeholder="Observações"><?=$obsCampo?></textarea>
                 </div>
             </div>
             <div class="row mt-3">
