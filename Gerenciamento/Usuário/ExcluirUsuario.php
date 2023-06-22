@@ -7,7 +7,7 @@
         {
             $id = $_POST['txtId'];
         
-            try {
+            /*try {
                 $sql = $conn->query("
                     select img_Usuario, curriculo_Usuario from Usuario where id_Usuario = $id;
                 ");
@@ -20,7 +20,7 @@
                 }
             } catch (PDOException $ex) {
                 $msg = $ex->getMessage();
-            }
+            }*/
 
             try {
                 $sql = $conn->prepare("
@@ -34,7 +34,7 @@
                 if ($sql->rowCount()>=1) {
                     $msg = 'Dados Excluidos com sucesso';
 
-                    if(!$excluirImg == NULL)
+                    /*if(!$excluirImg == NULL)
                     {
                         $caminhoImg = '../../Files/Usuario/Img/';
                         unlink($caminhoImg.$excluirImg);
@@ -43,7 +43,7 @@
                     {
                         $caminhoCurriculo = '../../Files/Usuario/Curriculo/';
                         unlink($caminhoCurriculo.$excluirCurriculo);
-                    }
+                    }*/
                 }
                 else
                 {

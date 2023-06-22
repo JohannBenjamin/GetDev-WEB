@@ -1,7 +1,7 @@
 <?php
     include_once('../../Conexão/conexao.php');
 
-    if($_POST) ///falta aq pra baixo, n esquece de img e curriculo
+    if($_POST)
     {
         $situacao = FALSE;
 
@@ -54,8 +54,8 @@
                 empty($_POST['txtDescricao']) &&
                 empty($_POST['txtAvaliacao']) &&
                 empty($_POST['txtProjRealizado']) &&
-                empty($_FILES['txtImg']['name']) &&
-                empty($_FILES['txtCurriculo']['name']) &&
+                empty($_FILES['txtImg']['tmp_name']) &&
+                empty($_FILES['txtCurriculo']['tmp_name']) &&
                 empty($_POST['txtStatus']) &&
                 empty($_POST['txtObs']))
                 {
@@ -64,9 +64,9 @@
                 }
                 else
                 {
-                    $situacaoUsuario = FALSE;
+                    /*$situacaoUsuario = FALSE;
                     $situacaoImg = FALSE;
-                    $situacaoCurriculo = FALSE;
+                    $situacaoCurriculo = FALSE;*/
                     if(!empty($_POST['txtNome']))
                     {
                         $nome = $_POST['txtNome'];
@@ -82,7 +82,7 @@
                     if(!empty($_POST['txtUsuario']))
                     {
                         $usuario = $_POST['txtUsuario'];
-                        $situacaoUsuario = TRUE;
+                        //$situacaoUsuario = TRUE;
                     }
                     if(!empty($_POST['txtSenha']))
                     {
@@ -104,24 +104,24 @@
                     {
                         $projRealizado = $_POST['txtProjRealizado'];
                     }
-                    if(!empty($_FILES['txtImg']['name']))
+                    if(!empty($_FILES['txtImg']['tmp_name']))
                     {
-                        $nomeImgVelho = $img;
-                        $img = $_FILES['txtImg']['name'];
-                        $situacaoImg = TRUE;
+                        //$nomeImgVelho = $img;
+                        $img = base64_encode(file_get_contents($_FILES['txtImg']['tmp_name']));
+                        //$situacaoImg = TRUE;
                     }
                     else if (! ($img == NULL)) {
-                        unlink('../../Files/Usuario/Img/'.$img);
+                        //unlink('../../Files/Usuario/Img/'.$img);
                         $img = NULL;
                     }
                     if(!empty($_FILES['txtCurriculo']['name']))
                     {
-                        $nomeCurriculoVelho = $nome;
-                        $curriculo = $_FILES['txtCurriculo']['name'];
-                        $situacaoCurriculo = TRUE;
+                        //$nomeCurriculoVelho = $nome;
+                        $curriculo = base64_encode(file_get_contents($_FILES['txtCurriculo']['tmp_name']));
+                        //$situacaoCurriculo = TRUE;
                     }
                     else if (! ($curriculo == NULL)) {
-                        unlink('../../Files/Usuario/Curriculo/'.$curriculo);
+                        //unlink('../../Files/Usuario/Curriculo/'.$curriculo);
                         $curriculo = NULL;
                     }
                     if(!empty($_POST['txtStatus']))
@@ -134,7 +134,7 @@
                     }
 
                     //considere que o $usuario já vai ter o nome alterado ou não, por isso vai funcionar
-                    if($situacaoImg)
+                    /*if($situacaoImg)
                     {
                         $indiceImg = strpos($img,'.');
                         $tipoImg = substr($img, $indiceImg);
@@ -199,7 +199,7 @@
                                 rename($caminhoCurriculoVelho, $caminhoCurriculoNovo);
                             }
                         }                        
-                    }
+                    }*/
                     
                     try {
                         $sql = $conn->prepare("

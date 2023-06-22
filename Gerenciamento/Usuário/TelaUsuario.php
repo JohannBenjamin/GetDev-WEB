@@ -110,7 +110,7 @@
             </div>
             <div class="row mt-3">
                 <div class="col-sm-4">
-                    <input type="file" name="txtImg" id="txtImg" class="form-control" value="<?=$imgCampo?>">
+                    <input type="file" name="txtImg" id="txtImg" class="form-control">
                 </div>
                 <div class="col-sm-4">
                     <input type="file" name="txtCurriculo" id="txtCurriculo" class="form-control" value="<?=$curriculoCampo?>">

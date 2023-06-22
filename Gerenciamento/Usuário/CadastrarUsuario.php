@@ -26,25 +26,29 @@
             $descricao = $_POST['txtDescricao'];
             $avaliacao = $_POST['txtAvaliacao'];
             $projRealizado = $_POST['txtProjRealizado'];
-            $img = $_FILES['txtImg']['name'];
-            $curriculo = $_FILES['txtCurriculo']['name'];
+            $img = $_FILES['txtImg']['tmp_name'];
+            $curriculo = $_FILES['txtCurriculo']['tmp_name'];
             $status = $_POST['txtStatus'];
             $obs = $_POST['txtObs'];
 
-            //Renomeando a Imagem
-            if(!$img == NULL)
+            //Convertendo a img em base64
+            if(! ($img == NULL))
             {
-                $indiceImg = strpos($img, '.');
+                /*$indiceImg = strpos($img, '.');
                 $tipoImg = substr($img, $indiceImg);
-                $img = $usuario.$tipoImg;
+                $img = $usuario.$tipoImg;*/
+
+                $img = base64_encode(file_get_contents($img));
             }
             
             //Renomeando o Curriculo
             if(!$curriculo == NULL)
             {
-                $indiceCurriculo = strpos($curriculo, '.');
+                /*$indiceCurriculo = strpos($curriculo, '.');
                 $tipoCurriculo = substr($curriculo, $indiceCurriculo);
-                $curriculo = $usuario.$tipoCurriculo;
+                $curriculo = $usuario.$tipoCurriculo;*/
+
+                $curriculo = base64_encode(file_get_contents($curriculo));
             }
 
             try {
@@ -103,18 +107,18 @@
                     $id = $conn->lastInsertId();
                     $situacao = TRUE;
 
-                    if(!$img == NULL)
+                    /*if(! ($img == NULL))
                     {
                         $caminhoImg = "../../Files/Usuario/Img/";
                         $arquivo = $caminhoImg.$img;
                         move_uploaded_file($_FILES['txtImg']['tmp_name'], $arquivo);
                     }
-                    if(!$curriculo == NULL)
+                    if(! ($curriculo == NULL))
                     {
                         $caminhoCurriculo = "../../Files/Usuario/Curriculo/";
                         $arquivo = $caminhoCurriculo.$curriculo;
                         move_uploaded_file($_FILES['txtCurriculo']['tmp_name'], $arquivo);
-                    }
+                    }*/
                 }
                 else
                 {
