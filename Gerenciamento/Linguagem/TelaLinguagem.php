@@ -16,7 +16,7 @@
 
         if($_POST)
         {
-            $btn = $_POST['btn'];
+            $btn = $_POST['BotaoGambi'];
             if($btn == 'buscar')
             {
                 include_once('PesquisarLinguagem.php');
@@ -53,13 +53,13 @@
                 <h1>Gerenciamento de Linguagens</h1>
             </div>
         </div>
-        <form action="" method="post" class="form-control">
+        <form action="" method="post" class="form-control" id="frmLinguagem" onsubmit="return false;">
             <div class="row mt-3">
                 <div class="col-sm-2">
-                    <input type="number" name="txtId" id="txtId" class="form-control" placeholder="Id" value="<?=$idCampo?>">
+                    <input type="number" name="txtId" id="txtId" class="form-control" placeholder="Id" value="<?=$idCampo?>" min=0>
                 </div>
                 <div class="col-sm-10">
-                    <button class="btn btn-primary" id="btnBuscar" name="btn" value="buscar" formaction="TelaLinguagem.php">Buscar</button>
+                    <button class="btn btn-primary" id="btnBuscar" name="btn" value="buscar" onclick="Pesquisar()">Buscar</button>
                 </div>
             </div>
             <div class="row mt-3">
@@ -79,15 +79,16 @@
                     <textarea name="txtObs" id="txtObs" rows="5" class="form-control" placeholder="Observações"><?=$obsCampo?></textarea>
                 </div>
             </div>
+            <input type="hidden" id="BotaoGambi" name="BotaoGambi">
             <div class="row mt-3">
                 <div class="col-sm-6 text-center">
                     <h5><?=$msg?></h5>
                 </div>
                 <div class="col-sm-6 text-end">
-                    <button class="btn btn-success" id="btnCadastrar"name="btn" value="cadastrar" formaction="TelaLinguagem.php">Cadastrar</button>
-                    <button class="btn btn-secondary" id="btnAlterar" name="btn" value="alterar" formaction="TelaLinguagem.php">Alterar</button>
-                    <button class="btn btn-warning" id="btnLimpar" name="btn" value="limpar" formaction="TelaLinguagem.php">Limpar</button>
-                    <button class="btn btn-danger" id="btnExcluir" name="btn" value="excluir" formaction="TelaLinguagem.php">Excluir</button>
+                    <button class="btn btn-success" id="btnCadastrar"name="btn" value="cadastrar" onclick="Cadastrar()">Cadastrar</button>
+                    <button class="btn btn-secondary" id="btnAlterar" name="btn" value="alterar" onclick="Alterar()">Alterar</button>
+                    <button class="btn btn-warning" id="btnLimpar" name="btn" value="limpar" onclick="Limpar()">Limpar</button>
+                    <button class="btn btn-danger" id="btnExcluir" name="btn" value="excluir" onclick="Excluir()">Excluir</button>
                     <button class="btn btn-dark" id="btnSair" name="btn" value="sair" formaction="TelaLinguagem.php">Sair</button>
                 </div>
             </div>
@@ -110,6 +111,6 @@
         </tbody>
         </table>
     </div>
-
+    <script src="Validacoes.js"></script>
 </body>
 </html>
