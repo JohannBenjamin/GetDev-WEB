@@ -42,10 +42,9 @@
             }
         }
     ?>
-
     <form action="" method="post" name="login" id="login">
         <section class="vh-100" style="background-color: #508bfc;">
-            <div class="container py-5 5-100">
+            <div class="container">
                 <div class="row d-flex justify-content-center align-item-center h-100">
                     <div class="col-12" col-md-8 col-lg-6 col-x1-5>
                         <div class="card-body p-5 text-center">

@@ -9,11 +9,21 @@
 </head>
 <style>
     body {
-        background-color: #2A3270;
+        /*background-color: #2A3270;          #3D54CC*/
+        background-color: #32256F;
     }
     #formulario 
     {
-        background-color: #FFCE2B;
+       /* background-color: #FFCE2B;*/
+       background-color: #789824;
+    }
+    #btnCadastrar
+    {
+        background-color: #A15A26;
+    }
+    #btnCadastrar:hover
+    {
+        background-color: #7A3A0A;
     }
 </style>
 
@@ -41,31 +51,36 @@
                 <h1>Crie uma conta!</h1>
             </div>
         </div>
-        <form action="" id="formulario" method="post" class= "form-control">
+        <form action="" id="formulario" method="post" class= "form-control border-0">
             <div class="row mt-3">
                 <div class="col-sm-12">
+                    <label for="Nome" class = "form-label">nome</label>
                     <input type="text" class="form-control" name="txtNome" placeholder="Insira o seu nome completo">
                     <!-- volte aqui para colocar os valores (value) -->
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12">
+                    <label for="Data" class = "form-label">Data de nascimento</label>
                     <input type="date" class="form-control" name="txtNascimento"
                         placeholder="Insira a sua data de nascimento">
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12">
+                    <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" name="txtEmail" placeholder="Insira o seu Email">
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12">
+                    <label for="senha" class = "form-label">Senha</label>
                     <input type="password" class="form-control" name="txtSenha" placeholder="Insira a sua Senha">
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12">
+                    <label for="telefone" class = "form-label">Telefone</label>
                     <input type="tel" class="form-control" name="txtTelefone"
                         placeholder="Insira o seu número de telefone">
                     <!-- Volte aqui quando descobrir como usar o input tel corretamente!! -->
@@ -73,14 +88,15 @@
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12">
-                    <textarea name="txtDescricao" id="txtDescricao" rows="5" class="form-control"
+                    <label for="desc" class = "form-label">descrição</label>
+                    <textarea name="txtDescricao" id="txtDescricao" rows="3" class="form-control"
                         placeholder="Coloque uma pequena descrição sobre você e suas habilidades."></textarea>
                     <!--volte aqui para colocar nome e id -->
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12 text-end">
-                    <button  name = "btn" id="btnCadastrar" class="btn btn-primary" formaction="TelaCadastro.php" value="Cadastrar">Cadastrar</button>
+                    <button  name = "btn" id="btnCadastrar" class="btn text-light" formaction="TelaCadastro.php" value="Cadastrar">Cadastrar</button>
                 </div>
             </div>
             <div class="row mt-3">
