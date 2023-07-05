@@ -29,7 +29,7 @@
                     <input type="number" name="txtId" id="txtId" class="form-control" placeholder="Id" value="<?=$idCampo?>" min=0>
                 </div>
                 <div class="col-sm-2">
-                    <button class="btn btn-primary" id="btnBuscar" name="btn" value="buscar">Buscar</button>
+                    <button class="btn btn-primary" id="btnBuscar" name="btn" value="buscar" onclick = "Pesquisar()">Buscar</button>
                 </div>
                 <div class="col-sm-3">
 
@@ -69,6 +69,7 @@
                     <textarea name="txtObs" placeholder="Observações" class="form-control" rows="5" id="txtObs"><?=$obsCampo?></textarea>
                 </div>                    
             </div>
+            <input type="hidden" id="BotaoGambi" name="BotaoGambi">
             <div class="row mt-3">
                 <div class="col-sm-6">
                     <div class="col-sm-12 text-center">
@@ -76,14 +77,15 @@
                     </div>
                 </div>
                 <div class="col-sm-6 text-end">
-                    <button id="btnCadastrar" name="btn" class="btn btn-success" value="cadastrar">Cadastrar</button>
-                    <button id="btnAlterar" name="btn" class="btn btn-secondary" value="alterar">Alterar</button>
-                    <button id="btnLimpar" name="btn" class="btn btn-warning" value="limpar">Limpar</button>
-                    <button id="btnExcluir" name="btn" class="btn btn-danger" value="excluir">Excluir</button>
+                    <button id="btnCadastrar" name="btn" class="btn btn-success" value="cadastrar" onclick = "Cadastrar()">Cadastrar</button>
+                    <button id="btnAlterar" name="btn" class="btn btn-secondary" value="alterar" onclick = "Alterar()">Alterar</button>
+                    <button id="btnLimpar" name="btn" class="btn btn-warning" value="limpar" onclick = "Limpar()" >Limpar</button>
+                    <button id="btnExcluir" name="btn" class="btn btn-danger" value="excluir" onclick = "Excluir()">Excluir</button>
                     <button id="btnSair" name="btn" class="btn btn-dark" formaction="" value="sair">Sair</button>
                 </div>
             </div>
         </form>
     </div>
+    <script src= "ValidacoesProjeto.js"></script>
 </body>
 </html>
