@@ -111,6 +111,6 @@
         </tbody>
         </table>
     </div>
-    <script src="Validacoes.js"></script>
+    <script src="ValidacoesLinguagem.js"></script>
 </body>
 </html>
