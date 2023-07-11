@@ -11,11 +11,44 @@
         $msg = 'Execute uma operaçao...';
         $idCampo = '';
         $idUsuarioCampo = '';
+        $nomeUsuarioCampo = '';
         $nomeCampo = '';
         $linkCampo = '';
         $statusCampo = '';
         $obsCampo = '';
 
+        if($_POST)
+        {
+            $btn = $_POST['BotaoGambi'];
+            if($btn == 'buscar')
+            {
+                include_once('PesquisarProjeto.php');
+            }
+            if($btn == 'cadastrar')
+            {
+                include_once('CadastrarProjeto.php');
+                /*if($situacao)
+                {
+                    $idCampo = $id;
+                    include_once('PesquisarProjeto.php');
+                    $msg = 'Dados Cadastrados com sucesso. ID Gerado: '.$id;
+                }*/
+            }
+            if($btn == 'alterar')
+            {
+                include_once('AlterarProjeto.php');
+                /*if($situacao)
+                {
+                    $idCampo = $id;
+                    include_once('PesquisarProjeto.php');
+                    $msg = 'Dados Alterados com sucesso';
+                }*/
+            }
+            if($btn == 'excluir')
+            {
+                include_once('ExcluirProjeto.php');
+            }
+        }
     ?>
     <div class="container mt-3">
         <div class="row">
@@ -38,9 +71,9 @@
                     <input type="number" name="txtIdUsuario" id="txtIdUsuario" class="form-control" placeholder="Id do Usuário" value="<?=$idUsuarioCampo?>" min=0>
                 </div>
                 <div class="col-sm-3">
-                    <select class="form-control" name="txtNomeUsuário" id="txtNomeUsuário">
+                    <select class="form-control" name="txtNomeUsuario" id="txtNomeUsuario">
                         <option value="">-- Selecione um Usuário --</option>
-                        <?php //include_once('BuscarUsuario.php'); ?>
+                        <?php include_once('BuscarUsuario.php'); ?>
                     </select>
                 </div>
             </div>

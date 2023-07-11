@@ -63,6 +63,7 @@ function Alterar(){
 
 function Limpar(){
     id.value = "";
+    id_usuario = "";
     nome.value = "";
     link.value = "";
     img.value = "";
