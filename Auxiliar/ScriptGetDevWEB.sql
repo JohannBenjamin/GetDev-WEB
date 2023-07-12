@@ -101,7 +101,7 @@ create table Mensagem
 (
 	id_Mensagem	int	not null auto_increment	primary key,
 	id_Proposta_Mensagem int not null,
-	texto_Mensagem varchar(255) not null,
+	texto_Mensagem text not null,
 	registro_Mensagem timestamp not null,
 	remetente_Mensagem int not null,
 	arquivo_Mensagem longblob null,

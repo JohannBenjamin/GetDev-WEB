@@ -71,7 +71,7 @@
                     <input type="number" name="txtIdUsuario" id="txtIdUsuario" class="form-control" placeholder="Id do Usuário" value="<?=$idUsuarioCampo?>" min=0>
                 </div>
                 <div class="col-sm-3">
-                    <select class="form-control" name="txtNomeUsuario" id="txtNomeUsuario">
+                    <select class="form-control" name="txtNomeUsuario" id="txtNomeUsuario" disabled="true">
                         <option value="">-- Selecione um Usuário --</option>
                         <?php include_once('BuscarUsuario.php'); ?>
                     </select>
