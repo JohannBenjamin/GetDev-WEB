@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-        $msg = '';
+        $msg = 'Execute uma operação..';
         $idCampo = '';
         $idUsuarioCampo = '';
         $publicacaoCampo = '';
@@ -16,6 +16,27 @@
         $statusCampo = '';
         $descricaoCampo = '';
         $obsCampo = '';
+
+        if($_POST)
+        {
+            $btn = $_POST['BotaoGambi'];
+            if($btn == 'buscar')
+            {
+                include_once('PesquisarServico.php');
+            }
+            if($btn == 'cadastrar')
+            {
+                include_once('CadastrarServico.php');
+            }
+            if($btn == 'alterar')
+            {
+                include_once('AlterarServico.php');
+            }
+            if($btn == 'excluir')
+            {
+                include_once('ExcluirServico.php');
+            }
+        }
     ?>
     <div class="container mt-3">
         <div class="row">
@@ -23,7 +44,7 @@
                 <h1>Gerenciamento de Serviços</h1>
             </div>
         </div>
-        <form action="" method="post" class="form-control">
+        <form action="" method="post" class="form-control" id="frmServico" onsubmit="return false;">
             <div class="row mt-3">
                 <div class="col-sm-2">
                     <input type="number" name="txtId" id="txtId" class="form-control" placeholder="Id" value="<?= $idCampo ?>">
@@ -31,14 +52,16 @@
                 <div class="col-sm-2">
                     <button class="btn btn-primary" id="btnBuscar" name="btn" value="buscar" onclick="Pesquisar()">Buscar</button>
                 </div>
-                <div class="col-sm"></div>
+                <div class="col-sm">
+                    <input type="hidden" id="BotaoGambi" name="BotaoGambi">
+                </div>
                 <div class="col-sm-2">
                     <input type="number" name="txtIdUsuario" id="txtIdUsuario" class="form-control" placeholder="Id do Usuário" value="<?= $idUsuarioCampo ?>">
                 </div>
                 <div class="col-sm-3">
-                    <select class="form-control" name="txtNomeUsuário" id="txtNomeUsuário">
+                    <select class="form-control" name="txtNomeUsuario" id="txtNomeUsuario" disabled="true">
                         <option value="">-- Selecione um Usuário --</option>
-                        <?php //include_once('BuscarUsuario.php'); ?>
+                        <?php include_once('../Proposta/BuscarUsuario.php'); ?>
                     </select>
                 </div>
                 <div class="col-sm-2">
@@ -84,5 +107,6 @@
             </div>
         </form>
     </div>
+    <script src="ValidacoesServico.js"></script>
 </body>
 </html>
