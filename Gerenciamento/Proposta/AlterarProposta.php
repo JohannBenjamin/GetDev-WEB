@@ -61,7 +61,7 @@
     }
     if(!empty($_POST['txtIdServico']))
     {
-        $idServico = $_POST['txtServico'];
+        $idServico = $_POST['txtIdServico'];
     }
     if(!empty($_POST['txtDescricao']))
     {
@@ -86,6 +86,13 @@
     if(!empty($_POST['txtObs']))
     {
         $obs = $_POST['txtObs'];
+    }
+
+    include_once('VerificarProposta.php');
+    if($situacao)
+    {
+        $msg = "Usuário não pode propor para ele mesmo";
+        return;
     }
 
     try {

@@ -25,6 +25,13 @@
     $status = $_POST['txtStatus'];
     $obs = $_POST['txtObs'];
 
+    include_once('VerificarProposta.php');
+    if($situacao)
+    {
+        $msg = "Usuário não pode propor para ele mesmo";
+        return;
+    }
+
     try {
         $sql = $conn->prepare("
             insert into Proposta
@@ -33,7 +40,7 @@
                 id_Servico_Proposta,
                 descricao_Proposta,
                 valor_Proposta,
-                celular_Proposta
+                celular_Proposta,
                 email_Proposta,
                 status_Proposta,
                 obs_Proposta
