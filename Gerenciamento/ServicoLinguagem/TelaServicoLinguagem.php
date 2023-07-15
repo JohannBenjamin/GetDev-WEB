@@ -5,35 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Bootstrap/css/bootstrap.css">
-    <title>Gerenciamento de Linguagens dos Usuários</title>
+    <title>Gerenciamento de Linguagens dos Serviços</title>
 </head>
 
 <body>
     <?php
         $msg = '';
         $idCampo = '';
-        $idUsuarioCampo = '';
-        $usuarioCampo = '';
+        $idServicoCampo = '';
+        $servicoCampo = '';
         $statusCampo = '';
         $obsCampo = '';
         $array = [''];
 
         if($_POST)
         {
-            include_once("PesquisarUsuarioLinguagem.php");
+            include_once("PesquisarServicoLinguagem.php");
         }
     ?>
     <div class="container mt-3">
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h1>Gerenciamento de Linguagens dos Usuários</h1>
+                <h1>Gerenciamento de Linguagens dos Serviços</h1>
             </div>
         </div>
-        <form action="" method="post" class="form-control" id="frmUsuarioLinguagem" onsubmit="return false;">
+        <form action="" method="post" class="form-control" id="frmServicoLinguagem" onsubmit="return false;">
             <div class="row mt-3">
                 <div class="col-sm-3">
                     <div class="input-group">
-                        <input type="number" name="txtIdUsuario" id="txtIdUsuario" class="form-control" placeholder="Id do Usuário" value="<?=$idUsuarioCampo?>" min="0">
+                        <input type="number" name="txtIdServico" id="txtIdServico" class="form-control" placeholder="Id do Serviços" value="<?=$idServicoCampo?>" min="0">
                         <button class="btn btn-primary" id="btnBuscar" name="btn" value="buscar" onclick="Pesquisar()">Buscar</button>
                     </div>
                 </div>
@@ -43,18 +43,18 @@
                 <div class="col-sm-6 text-end">
                     <button type="button" name="btn" id="btnCadastrar" class="btn btn-success" onclick="Cadastrar()">Cadastrar</button>
                     <button type="button" name="btn" id="btnLimpar" class="btn btn-warning" onclick="Limpar()">Limpar</button>
-                    <button type="button" name="btn" id="btnSair" class="btn btn-dark">Sair</button>
+                    <button type="button" name="btn" id="btnSair" class="btn btn-dark" >Sair</button>
                 </div>
             </div>
             
             <div class="row mt-3">
                 <div class="col-sm-6">
-                    <h3><?= ($usuarioCampo == ""?"":"Usuário: $usuarioCampo") ?></h3>
+                    <h3><?= ($servicoCampo == ""?"":"Serviço: $servicoCampo") ?></h3>
                 </div>
             </div>
             <div class="table-responsive">
                 <table class="table table-info table-sm table-bordered caption-top mt-3" id="tabela">
-                    <?= ($usuarioCampo==""?"":"<caption>Lista de Linguagens:</caption>
+                    <?= ($servicoCampo==""?"":"<caption>Lista de Linguagens:</caption>
                     <thead>
                         <tr>
                         <th scope='col'>#Id</th>
@@ -83,12 +83,12 @@
                 </table>
             </div>
 
-            <input type="hidden" name="txtIdUsuarioLinguagem" id="txtIdUsuarioLinguagem">
+            <input type="hidden" name="txtIdServicoLinguagem" id="txtIdServicoLinguagem">
             <input type="hidden" name="txtIdLinguagem" id="txtIdLinguagem">
             <input type="hidden" name="BotaoGambi" id="BotaoGambi">
         </form>
     </div>
     <script src="../../Bootstrap/js/bootstrap.bundle.js"></script> <!--para funcionar o dropdown-->
-    <script src="ValidacoesUsuarioLinguagem.js"></script>
+    <script src="ValidacoesServicoLinguagem.js"></script>
 </body>
 </html>

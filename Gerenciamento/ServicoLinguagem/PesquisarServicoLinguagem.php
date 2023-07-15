@@ -3,23 +3,24 @@
 
     if(!$_POST)
     {
-        header('Location:TelaUsuarioLinguagem.php');
+        header('Location:TelaServicoLinguagem.php');
     }
 
-    if(empty($_POST['txtIdUsuario']))
+    if(empty($_POST['txtIdServico']))
     {
         $msg = "Informe um Id";
+        return;
     }
     
-    $id = $_POST['txtIdUsuario'];
+    $id = $_POST['txtIdServico'];
 
     try {
         $sql = $conn->query("
-            select UL.id_UsuarioLinguagem, L.id_Linguagem, U.id_Usuario, U.nome_Usuario, L.nome_Linguagem, UL.status_UsuarioLinguagem, UL.obs_UsuarioLinguagem
-            from UsuarioLinguagem as UL
-            inner join Linguagem as L on L.id_Linguagem = UL.id_Linguagem_UsuarioLinguagem
-            inner join Usuario as U on U.id_Usuario = UL.id_Usuario_UsuarioLinguagem
-            where U.id_Usuario=$id
+            select SL.id_ServicoLinguagem, L.id_Linguagem, S.id_Servico, S.nome_Servico, L.nome_Linguagem, SL.status_ServicoLinguagem, SL.obs_ServicoLinguagem
+            from ServicoLinguagem as SL
+            inner join Linguagem as L on L.id_Linguagem = SL.id_Linguagem_ServicoLinguagem
+            inner join Servico as S on S.id_Servico = SL.id_Servico_ServicoLinguagem
+            where S.id_Servico=$id
         ");
 
         if ($sql->rowCount()>=1) {
@@ -28,8 +29,8 @@
             foreach ($sql as $row) {
                 $idCampo = $row[0];
                 $idLinguagemCampo = $row[1];
-                $idUsuarioCampo = $row[2];
-                $usuarioCampo = $row[3];
+                $idServicoCampo = $row[2];
+                $servicoCampo = $row[3];
                 $nomeCampo = $row[4];
                 $statusCampo = $row[5];
                 $obsCampo = $row[6];

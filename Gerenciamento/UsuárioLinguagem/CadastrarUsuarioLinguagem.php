@@ -69,7 +69,7 @@
             }
             else
             {
-                echo "Erro na alteração!";
+                echo "Erro na cadastro!";
             }
         } catch (PDOException $ex) {
             echo $ex->getMessage();
