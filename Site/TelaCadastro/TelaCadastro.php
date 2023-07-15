@@ -10,19 +10,19 @@
 <style>
     body {
         /*background-color: #2A3270;          #3D54CC*/
-        background-color: #32256F;
+        background-color: #01031b;
     }
-    #formulario 
-    {
-       /* background-color: #FFCE2B;*/
-       background-color: #789824;
+
+    #formulario {
+        /* background-color: #FFCE2B;*/
+        background-color: #181B5A;
     }
-    #btnCadastrar
-    {
+
+    #btnCadastrar {
         background-color: #A15A26;
     }
-    #btnCadastrar:hover
-    {
+
+    #btnCadastrar:hover {
         background-color: #7A3A0A;
     }
 </style>
@@ -37,11 +37,10 @@
     $msg = '';
 
     if ($_POST) {
-       $btn = $_POST['btn']; //volte aqui quando tiver os botões ou botão
-       if($btn == 'Cadastrar')
-       {
-        include_once('BotaoCadastro.php');
-       }
+        $btn = $_POST['btn']; //volte aqui quando tiver os botões ou botão
+        if ($btn == 'Cadastrar') {
+            include_once('BotaoCadastro.php');
+        }
     }
 
     ?>
@@ -51,52 +50,39 @@
                 <h1>Crie uma conta!</h1>
             </div>
         </div>
-        <form action="" id="formulario" method="post" class= "form-control border-0">
+        <form action="" id="formulario" method="post" class="form-control border-0">
             <div class="row mt-3">
                 <div class="col-sm-12">
-                    <label for="Nome" class = "form-label">nome</label>
+                    <label for="Nome" class="form-label text-white">Nome</label>
                     <input type="text" class="form-control" name="txtNome" placeholder="Insira o seu nome completo">
                     <!-- volte aqui para colocar os valores (value) -->
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12">
-                    <label for="Data" class = "form-label">Data de nascimento</label>
+                    <label for="txtNascimento" class="form-label text-white">Data de nascimento</label>
                     <input type="date" class="form-control" name="txtNascimento"
                         placeholder="Insira a sua data de nascimento">
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12">
-                    <label for="email" class="form-label">Email</label>
+                    <label for="email" class="form-label text-white">Email</label>
                     <input type="email" class="form-control" name="txtEmail" placeholder="Insira o seu Email">
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12">
-                    <label for="senha" class = "form-label">Senha</label>
+                    <label for="senha" class="form-label text-white">Senha</label>
                     <input type="password" class="form-control" name="txtSenha" placeholder="Insira a sua Senha">
                 </div>
             </div>
-            <div class="row mt-3">
-                <div class="col-sm-12">
-                    <label for="telefone" class = "form-label">Telefone</label>
-                    <input type="tel" class="form-control" name="txtTelefone"
-                        placeholder="Insira o seu número de telefone">
-                    <!-- Volte aqui quando descobrir como usar o input tel corretamente!! -->
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-sm-12">
-                    <label for="desc" class = "form-label">descrição</label>
-                    <textarea name="txtDescricao" id="txtDescricao" rows="3" class="form-control"
-                        placeholder="Coloque uma pequena descrição sobre você e suas habilidades."></textarea>
-                    <!--volte aqui para colocar nome e id -->
-                </div>
-            </div>
+
+
             <div class="row mt-3">
                 <div class="col-sm-12 text-end">
-                    <button  name = "btn" id="btnCadastrar" class="btn text-light" formaction="TelaCadastro.php" value="Cadastrar">Cadastrar</button>
+                    <button name="btn" id="btnCadastrar" class="btn text-light" formaction="TelaCadastro.php"
+                        value="Cadastrar">Cadastrar</button>
                 </div>
             </div>
             <div class="row mt-3">
