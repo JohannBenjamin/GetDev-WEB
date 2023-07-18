@@ -15,6 +15,14 @@
     #formulario {
         background-color: #181B5A
     }
+
+    #btnCadastrar {
+        background-color: #686BA3;
+    }
+
+    #btnCadastrar:hover {
+        background-color: #36397B ;
+    }
 </style>
 
 <body>
@@ -54,8 +62,8 @@
                 </div>
             </div>
             <div class="row mt-3">
-                <div class="col-sm-12">
-                    <button name="btn" id="btnCadastrar" class="btn text-light"></button>
+                <div class="col-sm-12 text-end">
+                    <button name="btn" id="btnCadastrar" class="btn text-light">Finalizar seu cadastro</button>
                 </div>
             </div>
         </form>

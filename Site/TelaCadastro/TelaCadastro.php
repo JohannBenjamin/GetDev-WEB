@@ -19,11 +19,11 @@
     }
 
     #btnCadastrar {
-        background-color: #A15A26;
+        background-color: #686BA3;
     }
 
     #btnCadastrar:hover {
-        background-color: #7A3A0A;
+        background-color: #36397B;
     }
 </style>
 

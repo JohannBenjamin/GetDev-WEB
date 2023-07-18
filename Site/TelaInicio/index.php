@@ -9,26 +9,9 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar text-white" style="background-color: #181B5A;">
-
-            <div class="row">
-                <div class="col-sm-2">
-                    <img src="logo.png" alt="" class="img-fluid">
-                </div>
-            </div>
-            <div class="btn-group btn-group-justified pe-5">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-outline-success">Cadastrar</button>
-                    <button type="button" class="btn btn-outline-success">Entrar</button>
-                    <button type="button" class="btn btn-outline-success">Sobre a empresa</button>
-                </div>
-            </div>
-            <!-- <div class="container-fluid" 181B5A>
-
-            </div>-->
-        </nav>
-    </header>
+    <?php
+    include_once('header.php')
+        ?>
     <div class="container-fluid" style="background-color: #01031b;">
         <div class="container">
             <div class="row">
@@ -44,7 +27,7 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="pasted image 0.png" class="d-block" alt="...">
+                                <img src="../Img/pasted image 0.png" class="d-block" alt="...">
 
                                 <div class="carousel-caption d-none d-md-block">
                                     <div class="rounded-pill text-white p-1" style="background-color: #36397B;">
@@ -54,7 +37,7 @@
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="what-is-software-engineering.png" class="d-block" alt="...">
+                                <img src="../Img/what-is-software-engineering.png" class="d-block" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
                                     <div class="rounded-pill text-white p-1" style="background-color: #36397B;">
                                         <h1>Trabalhe onde e quando quiser!</h1>
@@ -64,7 +47,7 @@
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="desenvolvedor-de-software-1200x700.png" class="d-block" alt="...">
+                                <img src="../Img/desenvolvedor-de-software-1200x700.png" class="d-block" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
                                     <div class="rounded-pill text-white p-1" style="background-color: #36397B;">
                                         <h1>Escolha a pessoa que dará vida ao seu projeto!</h1>
@@ -88,9 +71,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
-                    <h1 class="text-primary">GetDev</h1>
-                    <h3 class="text-white">Bem vindo a GetDev, uma plataforma para programadores programarem.</h3>
+                <div class="col-sm-12">
+
+                    <h1 class="text-white text-center">Bem vindo a GetDev, uma plataforma para programadores
+                        programarem.</h1>
                 </div>
             </div>
             <hr class="featurette-divider">
@@ -98,66 +82,51 @@
 
                 <div class="col-sm-6 text-white" style="background-color:#181B5A;">
                     <h1>Para você que busca um trabalho freelance</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                        has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has
-                        survived not only five centuries, but also the leap into electronic typesetting,
-                        remaining essentially unchanged. It was popularised in the 1960s with the release of
-                        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                        publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <p>
+                        Encontre projetos ideais para você, envie a sua proposta para o cliente que você tenha interesse
+                        em trabalhar com, trabalhe do seu jeito e ao finalizar o projeto receba o seu suado pagamento.
+                    </p>
                 </div>
                 <div class="col-sm-5">
                     <div class="col-sm-12 text-center">
-                        <img src="developing-programmer-team-development-website-600w-1445888471.webp" alt="" class="img-fluid">
+                        <img src="../Img/2ae102ffafbf76fd99174f66f475d071.png" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
             <hr class="featurette-divider">
             <div class="row justify-content-around align-items-center mt-3">
                 <div class="col-sm-5 text-center">
-                    <img src="29458e68-edfc-4d96-b73d-639c63d57f50.webp" alt="" class="img-fluid w-75">
+                    <img src="../Img/29458e68-edfc-4d96-b73d-639c63d57f50.webp" alt="" class="img-fluid w-75">
                 </div>
                 <div class="col-sm-6 text-white" style="background-color:#181B5A; ">
                     <h1>Para você que busca um programador para seu projeto</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                        has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has
-                        survived not only five centuries, but also the leap into electronic typesetting,
-                        remaining essentially unchanged. It was popularised in the 1960s with the release of
-                        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                        publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <p>
+                        Publique um projeto e comece a receber propostas de profissionais, descreva o serviço de que
+                        você necessita, o tipo de profissional e o seu orçamento. Interaja e selecione o melhor
+                        profissional para o serviço qeu você necessita, revise os perfis que mostraram interesse em seu
+                        projeto e converse e entre em um acordo com o freelancer.
+                    </p>
                 </div>
             </div>
             <hr class="featurette-divider">
             <div class="row justify-content-around">
                 <div class="col-sm-3 text-white" style="background-color: #36397B;">
-                    <img src="writing.png" alt="" class="img-fluid bg-white rounded-5 m-4">
+                    <img src="../Img/writing.png" alt="" class="img-fluid bg-white rounded-5 m-4">
                     <h1>Projetos</h1>
                     <hr>
                     <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                        has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has
-                        survived not only five centuries, but also the leap into electronic typesetting,
-                        remaining essentially unchanged. It was popularised in the 1960s with the release of
-                        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                        publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        Seja uma simples manutenção em seu site, programa, sistema ou até mesmo desenvolver do zero o
+                        seu projeto, seja pessoal ou profissional.
                     </p>
                 </div>
                 <div class="col-sm-3 text-white" style="background-color: #36397B;">
-                    <img src="user.png" alt="" class="img-fluid bg-white rounded-5 m-4">
+                    <img src="../Img/user.png" alt="" class="img-fluid bg-white rounded-5 m-4">
                     <h1>Quem é você </h1>
                     <hr>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                        has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has
-                        survived not only five centuries, but also the leap into electronic typesetting,
-                        remaining essentially unchanged. It was popularised in the 1960s with the release of
-                        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                        publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <p>Descreva quem é você, sua trajetora</p>
                 </div>
                 <div class="col-sm-3 text-white" style="background-color: #36397B;">
-                    <img src="book.png" alt="" class="img-fluid bg-white rounded-5 m-4">
+                    <img src="../Img/book.png" alt="" class="img-fluid bg-white rounded-5 m-4">
                     <h1> Sua Formação</h1>
                     <hr>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -207,4 +176,5 @@
     </footer>
     <script src="../../Bootstrap/js/bootstrap.js"></script>
 </body>
+
 </html>
