@@ -11,8 +11,43 @@
         $msg = "Informe um Id";
         return;
     }
-    
+
+    $situacao = FALSE;
     $id = $_POST['txtIdServico'];
+
+    try {
+        $sql = $conn->query("
+            select * from Servico where id_Servico=$id
+        ");
+
+        if($sql->rowCount()==0) {
+            $msg = "Sem resultados para a busca";
+            return;
+        }
+        else {
+            foreach ($sql as $row) {
+                $idServicoCampo = $row[0];
+                $servicoCampo = $row[2];
+                $msg = 'Busca realizada com sucesso!';
+            }
+        }
+    } catch (PDOException $ex) {
+        $msg = $ex->getMessage();
+    }
+
+    try {
+        $sql = $conn->query("
+            select * from ServicoLinguagem as SL
+            inner join Servico as S on S.id_Servico = SL.id_Servico_ServicoLinguagem
+            where S.id_Servico=$id
+        ");
+
+        if($sql->rowCount()==0) {
+            return;
+        }
+    } catch (PDOException $ex) {
+        $msg = $ex->getMessage();
+    }
 
     try {
         $sql = $conn->query("
@@ -53,10 +88,6 @@
                 $indice = $indice + 1;
             }
             $msg = 'Busca realizada com sucesso!';
-        }
-        else
-        {
-            $msg = "Sem Resultados para a busca";
         }
 
     } catch (PDOException $ex) {

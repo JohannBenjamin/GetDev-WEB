@@ -59,7 +59,7 @@ create table Servico
 	id_Servico int not null auto_increment primary key,
 	id_Usuario_Servico int not null ,
 	nome_Servico varchar(50) not null ,
-	descricao_Servico varchar(255) not null ,
+	descricao_Servico text not null ,
 	publicacao_Servico timestamp not null ,
 	valor_Servico decimal(10,2) not null ,
 	status_Servico varchar(25) not null ,
