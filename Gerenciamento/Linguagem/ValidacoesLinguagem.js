@@ -49,15 +49,7 @@ function Alterar() {
 }
 
 function Limpar() {
-   /* id.value = "";
-    nome.value = "";
-    stts.value = "";
-    obs.value = "";
-
-    btn.value = "limpar";
-    exec();
-    */
-    location.reload();
+    window.location.href="TelaServicoLinguagem.php";
 }
 
 function Excluir() {
