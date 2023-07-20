@@ -49,7 +49,7 @@ function Alterar() {
 }
 
 function Limpar() {
-    window.location.href="TelaServicoLinguagem.php";
+    window.location.href="TelaLinguagem.php";
 }
 
 function Excluir() {
