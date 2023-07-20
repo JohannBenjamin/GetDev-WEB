@@ -65,7 +65,7 @@
                     </select>
                 </div>
                 <div class="col-sm-2">
-                    <input type="date" name="txtPublicacao" id="txtPublicacao" class="form-control" value="<?= substr($publicacaoCampo, 0, 10) ?>">
+                    <input type="date" name="txtPublicacao" id="txtPublicacao" class="form-control" value="<?= substr($publicacaoCampo, 0, 10) ?>" disabled="true">
                 </div>
             </div>
             <div class="row mt-3">

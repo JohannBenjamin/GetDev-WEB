@@ -72,7 +72,7 @@
                 </div>
                 <div class="col-sm-2">
                     <input type="date" name="txtCadastro" id="txtCadastro" class="form-control"
-                        value="<?= substr($cadastroCampo, 0, 10) ?>">
+                        value="<?= substr($cadastroCampo, 0, 10) ?>" disabled="true">
                 </div>
             </div>
             <div class="row mt-3">

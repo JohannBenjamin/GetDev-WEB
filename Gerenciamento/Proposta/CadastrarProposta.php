@@ -42,6 +42,7 @@
                 valor_Proposta,
                 celular_Proposta,
                 email_Proposta,
+                publicacao_Proposta,
                 status_Proposta,
                 obs_Proposta
             )
@@ -53,6 +54,7 @@
                 :valor_Proposta,
                 :celular_Proposta,
                 :email_Proposta,
+                NOW(),
                 :status_Proposta,
                 :obs_Proposta
             )

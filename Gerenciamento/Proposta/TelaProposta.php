@@ -72,7 +72,7 @@
                     <input type="hidden" id="BotaoGambi" name="BotaoGambi">
                 <div class="col-sm-2">
                     <input type="date" name="txtCadastro" id="txtCadastro" class="form-control"
-                        value="<?= substr($publicacaoCampo, 0, 10) ?>">
+                        value="<?= substr($publicacaoCampo, 0, 10) ?>" disabled="true">
                 </div>
             </div>
             <div class="row mt-3">

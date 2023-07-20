@@ -30,6 +30,7 @@
                 id_Usuario_Servico,
                 nome_Servico,
                 descricao_Servico,
+                publicacao_Servico,
                 valor_Servico,
                 status_Servico,
                 obs_Servico
@@ -39,6 +40,7 @@
                 :id_Usuario_Servico,
                 :nome_Servico,
                 :descricao_Servico,
+                NOW(),
                 :valor_Servico,
                 :status_Servico,
                 :obs_Servico
