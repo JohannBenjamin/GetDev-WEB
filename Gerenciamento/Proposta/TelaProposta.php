@@ -58,7 +58,7 @@
                     <button class="btn btn-primary" id="btnBuscar" name="btn" value="buscar" onclick="Pesquisar()">Buscar</button>
                 </div>
                 <div class="col-sm-2">
-                    <input type="number" name="txtIdServico" id="txtIdServico" class="form-control" placeholder="Id do Servico" value="<?=$idServicoCampo?>" min="0">
+                    <input type="number" name="txtIdServico" id="txtIdServico" class="form-control" placeholder="Id do Serviço" value="<?=$idServicoCampo?>" min="0">
                 </div>
                 <div class="col-sm-2">
                     <input type="number" name="txtIdUsuario" id="txtIdUsuario" class="form-control" placeholder="Id do Usuário" value="<?=$idUsuarioCampo?>" min="0">
