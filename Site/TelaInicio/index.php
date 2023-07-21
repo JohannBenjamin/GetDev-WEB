@@ -10,8 +10,14 @@
 
 <body>
     <?php
-    include_once('header.php')
-        ?>
+    if($_GET)
+    {
+        include_once('headerLogado.php');
+    }
+    else {
+        include_once('header.php');
+    }
+    ?>
     <div class="container-fluid" style="background-color: #01031b;">
         <div class="container">
             <div class="row">
