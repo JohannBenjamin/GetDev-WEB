@@ -85,7 +85,7 @@ create table Proposta
 	id_Proposta int not null auto_increment primary key,
 	id_Usuario_Proposta int not null ,
 	id_Servico_Proposta int not null ,
-	descricao_Proposta varchar(255) not null ,
+	descricao_Proposta text not null ,
 	valor_Proposta decimal(10,2) not null ,
 	celular_Proposta char(14) null ,
 	email_Proposta varchar(100) null ,
