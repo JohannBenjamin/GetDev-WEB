@@ -52,7 +52,8 @@
                                     <div class="rounded-pill text-white p-1" style="background-color: #36397B;">
                                         <h1>Escolha a pessoa que dará vida ao seu projeto!</h1>
                                         <p>Escolha um freelancer ou receba propostas de profissionais interresados em
-                                            seu projeto.</p>
+                                            seu projeto.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +111,7 @@
             </div>
             <hr class="featurette-divider">
             <div class="row justify-content-around">
-                <div class="col-sm-3 text-white" style="background-color: #36397B;">
+                <div class="col-sm-3 text-white rounded-5" style="background-color: #36397B;">
                     <img src="../Img/writing.png" alt="" class="img-fluid bg-white rounded-5 m-4">
                     <h1>Projetos</h1>
                     <hr>
@@ -119,22 +120,18 @@
                         seu projeto, seja pessoal ou profissional.
                     </p>
                 </div>
-                <div class="col-sm-3 text-white" style="background-color: #36397B;">
+                <div class="col-sm-3 text-white rounded-5" style="background-color: #36397B;">
                     <img src="../Img/user.png" alt="" class="img-fluid bg-white rounded-5 m-4">
                     <h1>Quem é você </h1>
                     <hr>
-                    <p>Descreva quem é você, sua trajetora</p>
+                    <p>Descreva quem é você, sua trajetora, seus hobbies. em resumo se apresente.</p>
                 </div>
-                <div class="col-sm-3 text-white" style="background-color: #36397B;">
+                <div class="col-sm-3 text-white rounded-5" style="background-color: #36397B;">
                     <img src="../Img/book.png" alt="" class="img-fluid bg-white rounded-5 m-4">
                     <h1> Sua Formação</h1>
                     <hr>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum
-                        has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has
-                        survived not only five centuries, but also the leap into electronic typesetting,
-                        remaining essentially unchanged. It was popularised in the 1960s
+                    <p>
+                        Descreva sua trajetora acadêmica, sua escolaridade, seus cursos e como você trabalha.
                     </p>
                 </div>
             </div>
@@ -156,23 +153,12 @@
     </div>
     <footer class="text-center text-lg-start" style="background-color: #070a39;">
         <div class="container d-flex justify-content-center py-4">
-            <!---<button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
-                <i class="fab fa-instagram"></i>
-            </button>
-            <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
-                <i class="fab fa-twitter"></i>
-            </button>
-        </div>-->
-
-
-
-            <!-- Copyright -->
             <div class="text-center text-white" style="background-color: rgba(0, 0, 0, 0.2);">
                 <p></p>
-                © 2020 Copyright:
-                <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                © 2023 Copyright:
+                <a class="text-white" href="https://getdev.com.br/">GetDev.com.br</a>
             </div>
-            <!-- Copyright -->
+        </div>
     </footer>
     <script src="../../Bootstrap/js/bootstrap.js"></script>
 </body>
