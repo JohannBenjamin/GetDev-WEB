@@ -9,11 +9,10 @@
             </div>
             <div class="col-sm-6 align-self-center text-end">
                 <a class="btn btn-primary">TESTE</a>
-                <div class="btn-group btn-group-justified px-4">
+                <div class="btn-group btn-group-justified px-3">
                     <div class="btn-group">
-                        <a type="button" class="btn btn-outline-success" name="btn" id="btnCadastrar" href="../TelaCadastro/TelaCadastro.php">Cadastrar</a>
-                        <a type="button" class="btn btn-outline-success" name="btn" id="btnEntrar"  href="../Login/TelaLogin.php">Entrar</a>
-                        <a type="button" class="btn btn-outline-success">Sobre a empresa</a>
+                        <a class="btn btn-outline-success" name="btn" id="btnCadastrar" href="../TelaCadastro/TelaCadastro.php">Cadastrar</a>
+                        <a class="btn btn-outline-success" name="btn" id="btnEntrar"  href="../Login/TelaLogin.php">Entrar</a>
                     </div>
                 </div>
             </div>

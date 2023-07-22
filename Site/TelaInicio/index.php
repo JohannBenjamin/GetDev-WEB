@@ -10,8 +10,11 @@
 
 <body>
     <?php
-    if ($_GET) {
-        include_once('headerLogado.php');
+    session_start();
+    if ($_SESSION) {
+        if($_SESSION['id_Usuario']){
+            include_once('headerLogado.php');
+        }
     } else {
         include_once('header.php');
     }
@@ -89,7 +92,7 @@
             <div class="row justify-content-around align-items-center">
 
                 <div class="col-sm-6 text-white rounded-2" style="background-color:#181B5A;">
-                    <h1>Para você que busca um trabalho freelance</h1>
+                    <h1>Para você que busca um trabalho freelancer</h1>
                     <p>
                         Encontre projetos ideais para você, envie a sua proposta para o cliente que você tenha interesse
                         em trabalhar com, trabalhe do seu jeito e ao finalizar o projeto receba o seu suado pagamento.
@@ -117,9 +120,9 @@
                 </div>
             </div>
             <hr class="featurette-divider">
-            <div class="row justify-content-around">
-                <div class="col-sm-3 text-white rounded-5" style="background-color: #36397B;">
-                    <img src="../Img/writing.png" alt="" class="img-fluid bg-white rounded-5 m-4">
+            <div class="row justify-content-evenly">
+                <div class="col-sm-2 text-white rounded-5" style="background-color: #36397B;">
+                    <img src="../Img/writing.png" alt="" class="img-fluid bg-white rounded-5 my-2 px-1">
                     <h1>Projetos</h1>
                     <hr>
                     <p>
@@ -127,14 +130,14 @@
                         seu projeto, seja pessoal ou profissional.
                     </p>
                 </div>
-                <div class="col-sm-3 text-white rounded-5" style="background-color: #36397B;">
-                    <img src="../Img/user.png" alt="" class="img-fluid bg-white rounded-5 m-4">
+                <div class="col-sm-2 text-white rounded-5" style="background-color: #36397B;">
+                    <img src="../Img/user.png" alt="" class="img-fluid bg-light  rounded-5 my-2 p-2">
                     <h1>Quem é você </h1>
                     <hr>
                     <p>Descreva quem é você, sua trajetora, seus hobbies. em resumo se apresente.</p>
                 </div>
-                <div class="col-sm-3 text-white rounded-5" style="background-color: #36397B;">
-                    <img src="../Img/book.png" alt="" class="img-fluid bg-white rounded-5 m-4">
+                <div class="col-sm-2 text-white rounded-5" style="background-color: #36397B;">
+                    <img src="../Img/book.png" alt="" class="img-fluid bg-white rounded-5 my-2 px-2">
                     <h1> Sua Formação</h1>
                     <hr>
                     <p>

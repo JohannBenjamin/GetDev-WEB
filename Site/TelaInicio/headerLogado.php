@@ -9,13 +9,23 @@
             </div>
             <div class="col-sm-6 align-self-center text-end">
                 <a class="btn btn-primary">TESTE</a>
-                <div class="btn-group btn-group-justified px-4">
+                <div class="btn-group btn-group-justified px-3">
                     <div class="btn-group">
-                        <a type="button" class="btn btn-outline-success" name="btn" id="btnEntrar"  href="">Perfil</a>
-                        <a type="button" class="btn btn-outline-success">Sobre a empresa</a>
+                        <a class="btn btn-outline-success" name="btn" id="btnEntrar"  href="">Perfil</a>
+                        <button class="btn btn-outline-success" name="btn" id="btnEntrar" onclick="Sair()">Sair</button>
                     </div>
                 </div>
             </div>
         </div>        
     </nav>
 </header>
+<script>
+    function Sair() {
+        var x =confirm("Certeza que deseja sair?");
+        if(x == true)
+        {
+            window.location.href="../Login/LoginLogoff.php";
+        }
+        return;
+    }
+</script>
