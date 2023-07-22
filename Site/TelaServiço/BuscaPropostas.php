@@ -1,6 +1,5 @@
 <?php
     include_once('../../Conexão/conexao.php');
-    $btnLinguagens = '';
 
     try {
         $sql = $conn->query("
@@ -12,20 +11,12 @@
 
         if ($sql->rowCount()>=1) {
             foreach ($sql as $row) {
-                if($row[0] == 1)
-                {
-                    $numPropostas = $row[0]." Proposta";
-                }
-                else
-                {
-                    $numPropostas = $row[0]." Propostas";
-                }
-                
+                $numPropostas = $row[0];
             }
         }
         else
         {
-            $numPropostas = "0 Propostas";
+            $numPropostas = 0;
         }
     } catch (PDOException $ex) {
         echo $ex->getMessage();

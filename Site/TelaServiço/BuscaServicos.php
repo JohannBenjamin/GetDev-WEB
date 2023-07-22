@@ -35,7 +35,7 @@
                                     <h6>$textoDias</h6>
                                 </div>
                                 <div class='align-self-end'>
-                                    <p>$numPropostas</p>
+                                    <p>".($numPropostas == 1? $numPropostas.' Proposta' : $numPropostas.' Propostas')."</p>
                                 </div>
                             </div>
                             <div class='col-sm-10'>
