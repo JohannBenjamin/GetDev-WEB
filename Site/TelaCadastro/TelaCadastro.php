@@ -13,33 +13,39 @@
         background-color: #01031b;
     }
 
-    #formulario {
+    #formularioCadastro {
         /* background-color: #FFCE2B;*/
         background-color: #181B5A;
     }
 
-    #btnCadastrar {
+    #btnVoltar {
         background-color: #686BA3;
     }
 
-    #btnCadastrar:hover {
+    #btnVoltar:hover {
         background-color: #36397B;
     }
 </style>
 
 <body>
     <?php
-    $nomeCadastro = '';
-    $nascimentoCadastro = '';
-    $emailCadastro = '';
-    $senhaCadastro = '';
-    $telefoneCadastro = '';
     $msg = '';
 
     if ($_POST) {
-        $btn = $_POST['btn']; //volte aqui quando tiver os botões ou botão
+        $btn = $_POST['BotaoGambi'];
         if ($btn == 'Cadastrar') {
-            include_once('BotaoCadastro.php');
+            $texto ='';
+            foreach ($_POST as $dado => $valor) {
+                if($dado=="BotaoGambi"){
+                    break;
+                }
+                if(trim($texto) != "") {
+                    $texto = $texto."&";
+                }
+                $texto=$texto."$dado=$valor";
+            }
+
+            header("Location:TelaCadastroPerfil.php?$texto");
         }
     }
 
@@ -50,39 +56,40 @@
                 <h1>Crie uma conta!</h1>
             </div>
         </div>
-        <form action="" id="formulario" method="post" class="form-control border-0">
+        <form action="" id="formularioCadastro" method="post" class="form-control border-0" onsubmit="return false;">
             <div class="row mt-3">
                 <div class="col-sm-12">
-                    <label for="Nome" class="form-label text-white">Nome</label>
-                    <input type="text" class="form-control" name="txtNome" placeholder="Insira o seu nome completo">
+                    <label for="txtNome" class="form-label text-white fs-4">Nome</label>
+                    <input type="text" class="form-control" name="txtNome" id="txtNome" placeholder="Insira o seu nome completo">
                     <!-- volte aqui para colocar os valores (value) -->
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12">
-                    <label for="txtNascimento" class="form-label text-white">Data de nascimento</label>
-                    <input type="date" class="form-control" name="txtNascimento"
+                    <label for="txtNascimento" class="form-label text-white fs-4">Data de nascimento</label>
+                    <input type="date" class="form-control" name="txtNascimento" id="txtNascimento"
                         placeholder="Insira a sua data de nascimento">
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12">
-                    <label for="email" class="form-label text-white">Email</label>
-                    <input type="email" class="form-control" name="txtEmail" placeholder="Insira o seu Email">
+                    <label for="txtEmail" class="form-label text-white fs-4">Email</label>
+                    <input type="email" class="form-control" name="txtEmail" id="txtEmail" placeholder="Insira o seu Email">
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12">
-                    <label for="senha" class="form-label text-white">Senha</label>
-                    <input type="password" class="form-control" name="txtSenha" placeholder="Insira a sua Senha">
+                    <label for="txtSenha" class="form-label text-white fs-4">Senha</label>
+                    <input type="password" class="form-control" name="txtSenha" id="txtSenha" placeholder="Insira a sua Senha">
                 </div>
             </div>
 
+            <input type="hidden" name="BotaoGambi" id="BotaoGambi1">
 
             <div class="row mt-3">
                 <div class="col-sm-12 text-end">
-                    <button name="btn" id="btnCadastrar" class="btn text-light" formaction="TelaCadastro.php"
-                        value="Cadastrar">Cadastrar</button>
+                    <button class = "btn text-light" id="btnVoltar" name="btn" onclick="Voltar()">Voltar</button>
+                    <button name="btn" id="btnCadastrar" class="btn btn-primary text-light" onclick="CadastrarPt1()">Cadastrar</button>
                 </div>
             </div>
             <div class="row mt-3">
@@ -94,6 +101,7 @@
             </div>
         </form>
     </div>
+    <script src="ValidacoesCadastro.js"></script>
 </body>
 
 </html>
