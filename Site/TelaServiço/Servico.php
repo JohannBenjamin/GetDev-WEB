@@ -8,14 +8,25 @@
 </head>
 <body>
     <?php
-        include_once("../TelaInicio/header.php");
+        session_start();
+        if ($_SESSION) {
+            if($_SESSION['id_Usuario']){
+                include_once('../TelaInicio/headerLogado.php');
+            }
+        } else {
+            include_once('../TelaInicio/header.php');
+        }
     ?>
     <div class="container-fluid"  style="background-color: #01031b;">
-        <div class="offset-sm-1 row">
-            <div class="col-sm-3 my-4">
+        <div class="row">
+            <h1 class="text-center text-white my-3">Busque oportunidades!</h1>
+            <div class="offset-sm-1 col-sm-3 my-4">
                 <div class="card text-white" style="background-color:#36397B;">
                     <div class="card-body">
                         <form action="" method="post">
+                            <h3>Filtro</h3>
+                            <br>
+
                             <h5>Linguagem</h5>
                             <hr>
                             <div class="row row-cols-2">
@@ -61,16 +72,34 @@
 
                             <h5>Número de Propostas</h5>
                             <hr>
-                            <label for="rangeProposta" class="form-label">Propostas</label>
+                            <!--label for="rangeProposta" class="form-label">Propostas</label>
                             <input type="range" class="form-range" min="0" max="5" name="rangeProposta" id="rangeProposta" value="0" oninput="((this.value == 5) ? this.nextElementSibling.value = '+'+this.value : this.nextElementSibling.value = this.value)">
                             <output class="offset-sm-5 text-center p-2">0</output>
-                            <br>
+                            <br-->
+
+                            <div class="row my-3 justify-content-center">
+                                <div class="col-sm-4">
+                                    <input type="radio" class="btn-check" name="rangeProposta" id="minimo" autocomplete="off" value="0-1">
+                                    <label class="btn btn-outline-success" for="minimo">0 - 1</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="radio" class="btn-check" name="rangeProposta" id="medio" autocomplete="off" value="2-4">
+                                    <label class="btn btn-outline-success" for="medio">2 - 4</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="radio" class="btn-check" name="rangeProposta" id="maximo" autocomplete="off" value="5">
+                                    <label class="btn btn-outline-danger" for="maximo">5 ou +</label>
+                                </div>
+                            </div>
+
+                            <div class="text-end">
                             <button id="btnFiltro" name="btnFiltro" class="btn btn-primary" formaction="Filtro.php">Filtrar</button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-7">
                 <?php
                     if($_GET)
                     {

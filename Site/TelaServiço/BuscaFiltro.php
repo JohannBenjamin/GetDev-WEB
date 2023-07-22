@@ -2,6 +2,9 @@
     include_once('../../Conexão/conexao.php');
 
     $situacao = false;
+    $opcao1 = false;
+    $opcao2 = false;
+    $opcao3 = false;
     $texto = '';
     foreach ($_GET as $filtro => $valor) {
 
@@ -22,10 +25,16 @@
             $texto = $texto." and DATEDIFF(NOW(), S.publicacao_Servico) <=".$valor;
         }
         if($filtro == "rangeProposta") {
-            $filtroProposta = $valor;
+            if($valor == "0-1") {
+                $opcao1 = true;
+            }
+            elseif($valor == "2-4") {
+                $opcao2 = true;
+            }
+            else{
+                $opcao3 = true;
+            }
         }
-
-        
     }
 
     try {
@@ -35,6 +44,7 @@
             inner join ServicoLinguagem as SL on SL.id_Servico_ServicoLinguagem = S.id_Servico
             inner join Linguagem as L on L.id_Linguagem = SL.id_Linguagem_ServicoLinguagem
             where S.status_Servico like 'Ativo' $texto
+            group by S.id_Servico
             order by S.publicacao_Servico DESC
         ");
 
@@ -52,17 +62,23 @@
                 
                 include("BuscaServicoLinguagens.php");
                 include("BuscaPropostas.php");
-                
-                if($filtroProposta == 5) {
-                    if($numPropostas >= $filtroProposta) {
-                        $situacao = true;
+
+                if($opcao1) {
+                    if($numPropostas >= 0 && $numPropostas <= 1){
+                        $situacao = TRUE;
                     }
                 }
-                else {
-                    if($numPropostas == $filtroProposta) {
-                        $situacao = true;
+                if($opcao2) {
+                    if($numPropostas >= 2 && $numPropostas <= 4){
+                        $situacao = TRUE;
                     }
                 }
+                if($opcao3) {
+                    if($numPropostas >= 5){
+                        $situacao = TRUE;
+                    }
+                }
+
                 if($situacao)
                 {
                     echo 
@@ -76,7 +92,7 @@
                                         <h6>$textoDias</h6>
                                     </div>
                                     <div class='align-self-end'>
-                                        <p>$numPropostas</p>
+                                        <p>".($numPropostas == 1? $numPropostas.' Proposta' : $numPropostas.' Propostas')."</p>
                                     </div>
                                 </div>
                                 <div class='col-sm-10'>
