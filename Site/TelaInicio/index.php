@@ -10,16 +10,21 @@
 
 <body>
     <?php
-    if($_GET)
-    {
+    if ($_GET) {
         include_once('headerLogado.php');
-    }
-    else {
+    } else {
         include_once('header.php');
     }
     ?>
     <div class="container-fluid" style="background-color: #01031b;">
         <div class="container">
+            <div class="row">
+                <div class="col-sm-12 mt-3">
+                    <h1 class="text-white text-center">Bem vindo a GetDev, uma plataforma para programadores
+                        programarem.
+                    </h1>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-12 p-5">
                     <div id="carouselExampleCaptions" class="carousel slide carousel-dark" data-bs-ride="false">
@@ -47,8 +52,10 @@
                                 <div class="carousel-caption d-none d-md-block">
                                     <div class="rounded-pill text-white p-1" style="background-color: #36397B;">
                                         <h1>Trabalhe onde e quando quiser!</h1>
-                                        <p>Seja em uma praia paradisíaca, na sua cafeteria chique favorita ou em sua
-                                            casa, trabalhe onde quiser e quando quiser.</p>
+                                        <p>
+                                            Seja em uma praia paradisíaca, na sua cafeteria chique favorita ou em sua
+                                            casa, trabalhe onde quiser e quando quiser.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -77,17 +84,11 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12">
 
-                    <h1 class="text-white text-center">Bem vindo a GetDev, uma plataforma para programadores
-                        programarem.</h1>
-                </div>
-            </div>
             <hr class="featurette-divider">
             <div class="row justify-content-around align-items-center">
 
-                <div class="col-sm-6 text-white" style="background-color:#181B5A;">
+                <div class="col-sm-6 text-white rounded-2" style="background-color:#181B5A;">
                     <h1>Para você que busca um trabalho freelance</h1>
                     <p>
                         Encontre projetos ideais para você, envie a sua proposta para o cliente que você tenha interesse
@@ -96,7 +97,7 @@
                 </div>
                 <div class="col-sm-5">
                     <div class="col-sm-12 text-center">
-                        <img src="../Img/2ae102ffafbf76fd99174f66f475d071.png" alt="" class="img-fluid">
+                        <img src="../Img/programacao-700x394.png" alt="" class="img-fluid w-75">
                     </div>
                 </div>
             </div>
@@ -105,7 +106,7 @@
                 <div class="col-sm-5 text-center">
                     <img src="../Img/29458e68-edfc-4d96-b73d-639c63d57f50.webp" alt="" class="img-fluid w-75">
                 </div>
-                <div class="col-sm-6 text-white" style="background-color:#181B5A; ">
+                <div class="col-sm-6 text-white rounded-2" style="background-color:#181B5A; ">
                     <h1>Para você que busca um programador para seu projeto</h1>
                     <p>
                         Publique um projeto e comece a receber propostas de profissionais, descreva o serviço de que
@@ -163,6 +164,8 @@
                 <p></p>
                 © 2023 Copyright:
                 <a class="text-white" href="https://getdev.com.br/">GetDev.com.br</a>
+                <a class="text-white"  href="#">Termos de uso</a>
+                <a class="text-white" href="#">Política de privacidade</a>
             </div>
         </div>
     </footer>
