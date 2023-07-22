@@ -2,6 +2,6 @@
 
 session_start();
 session_destroy();
-header('location:TelaLogin.php');
+header('location:../TelaInicio/index.php');
 
 ?>

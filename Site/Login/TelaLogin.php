@@ -7,21 +7,38 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../Bootstrap/css/bootstrap.css">
 </head>
+<style>
+    body {
+        /*background-color: #2A3270;          #3D54CC*/
+        background-color: #01031b;
+    }
 
+    #frmLogin {
+        /* background-color: #FFCE2B;*/
+        background-color: #181B5A;
+    }
+
+    #btnVoltar {
+        background-color: #686BA3;
+    }
+
+    #btnVoltar:hover {
+        background-color: #36397B;
+    }
+</style>
 <body>
     <?php
         $erro = '';
 
         if ($_POST) {
             include_once('../../Conexão/conexao.php');
-            $login = $_POST['txtLogin']; //caso algo esteja errado volte aqui, provavelmente é aqui
-            $senha = $_POST['txtSenha']; //idem
+            $usuario = $_POST['txtUsuario'];
+            $senha = $_POST['txtSenha'];
         
             try {
                 $sql = $conn->query("
-                select * from Usuario where usuario_Usuario like '$login' and senha_Usuario like md5('$senha'); ");
-                
-             // volte aqui mais tarde
+                    select * from Usuario where usuario_Usuario like '$usuario' and senha_Usuario like md5('$senha')
+                ");
         
                 if ($sql->rowcount() == 1) {
                     session_start();
@@ -31,9 +48,8 @@
                         $_SESSION['usuario_Usuario'] = $row[4];
                         $_SESSION['nome_Usuario'] = $row[1];
                         $_SESSION['img_Usuario'] = $row[11];
-                        header('Location:../../Gerenciamento/Linguagem/TelaLinguagem.php');
-                    } //
-                    //volte aqui para o header
+                        header('Location:../TelaInicio/index.php');
+                    }
                 } else {
                     $erro = 'Erro, usuário ou senha inválidos!';
                 }
@@ -42,30 +58,40 @@
             }
         }
     ?>
-    <form action="" method="post" name="login" id="login">
-        <section class="vh-100" style="background-color: #508bfc;">
-            <div class="container">
-                <div class="row d-flex justify-content-center align-item-center h-100">
-                    <div class="col-12" col-md-8 col-lg-6 col-x1-5>
-                        <div class="card-body p-5 text-center">
-                            <h3 class="mb-5">Entrar</h3>
-                        </div>
+    <div class="container mt-5 w-25">
+        <div class="container">
+            <form action="" method="post" class="form-control border-0" name="frmLogin" id="frmLogin" onsubmit="return false;">
+                <div class="row">
+                    <div class="col-sm-12 text-light text-center">
+                        <h1 class="my-4">Entrar</h1>
+                    </div>
+                </div>
+                <div class="row d-flex">
+                    <div class="col-sm-12 text-light">
                         <div class="form-outline mb-4">
-                            <input type="text" id= "txtLogin" name = "txtLogin" class="form-control form-control-lg"> <!-- volte aqui possa ter um erro aqui -->
-                            <label class= "form-label" for="txtLogin">Usuário</label>
-                        </div>
-                        
-                        <div class="form-outline mb-4">
-                            <input type="text" name="txtSenha" id="txtSenha" class="form-control form-control-lg">
-                            <label class= "form-label" for="txtSenha">Senha</label>
+                            <label class= "form-label fs-4" for="txtUsuario">Usuário</label>
+                            <input type="text" id= "txtUsuario" name = "txtUsuario" class="form-control form-control-md">
                         </div>
                     </div>
-                    <button class = "btn btn-primary btn-lg btn block" id="btnLogin" name="btn" formaction="TelaLogin.php">Login</button>
-                    <hr>
-                    <p><?= $erro ?></p>
                 </div>
-            </div>
-        </section>
-    </form>
+                <div class="row">
+                    <div class="col-sm-12  text-light">
+                        <div class="form-outline mb-4">
+                            <label class= "form-label fs-4" for="txtSenha">Senha</label>
+                            <input type="password" name="txtSenha" id="txtSenha" class="form-control form-control-md">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 text-end">
+                        <button class = "btn text-light" id="btnVoltar" name="btn" onclick="Voltar()">Voltar</button>
+                        <button class = "btn btn-primary text-light" id="btnLogin" name="btn" onclick="Login()">Login</button>
+                        <p><?= $erro ?></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="ValidacoesLogin.js"></script>
 </body>
 </html>
