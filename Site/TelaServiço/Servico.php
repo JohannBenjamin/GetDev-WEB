@@ -18,6 +18,17 @@
         }
     ?>
     <div class="container-fluid"  style="background-color: #01031b;">
+        <nav class='row nav nav-tabs border-0'>
+            <div class='offset-sm-3 col-sm-2'>
+                <a class='nav-link text-center rounded-1 my-2 text-white fs-4' href='../TelaInicio/index.php' style="background-color: #181B5A;">Início</a>
+            </div>
+            <div class='col-sm-2'>
+                <a class='nav-link text-center rounded-1 my-2 text-white fs-4' href='../TelaUsuario/Usuario.php' style="background-color: #181B5A;">Freelancers</a>
+            </div>
+            <div class='col-sm-2'>
+                <a class='nav-link text-center rounded-1 my-2 text-white fs-4' href='Servico.php' style='background-color: #36397B'>Serviços</a>
+            </div>
+        </nav>
         <div class="row">
             <h1 class="text-center text-white my-3">Busque oportunidades!</h1>
             <div class="offset-sm-1 col-sm-3 my-4">
@@ -80,15 +91,15 @@
                             <div class="row my-3 justify-content-center">
                                 <div class="col-sm-4">
                                     <input type="radio" class="btn-check" name="rangeProposta" id="minimo" autocomplete="off" value="0-1">
-                                    <label class="btn btn-outline-success" for="minimo">0 - 1</label>
+                                    <label class="btn btn-outline-primary" for="minimo">0 - 1</label>
                                 </div>
                                 <div class="col-sm-4">
                                     <input type="radio" class="btn-check" name="rangeProposta" id="medio" autocomplete="off" value="2-4">
-                                    <label class="btn btn-outline-success" for="medio">2 - 4</label>
+                                    <label class="btn btn-outline-primary" for="medio">2 - 4</label>
                                 </div>
                                 <div class="col-sm-4">
                                     <input type="radio" class="btn-check" name="rangeProposta" id="maximo" autocomplete="off" value="5">
-                                    <label class="btn btn-outline-danger" for="maximo">5 ou +</label>
+                                    <label class="btn btn-outline-primary" for="maximo">5 ou +</label>
                                 </div>
                             </div>
 
@@ -104,12 +115,15 @@
                     if($_GET)
                     {
                         include_once("BuscaFiltro.php");
+                        if($vazio){
+                            echo "<h1 class='mt-3 text-white'>Sem Resultados!</h1>";
+                        }
                     }
                     else
                     {
                         include_once("BuscaServicos.php");
                     }
-                ?>
+                ?>  
             </div>
         </div>
     </div>

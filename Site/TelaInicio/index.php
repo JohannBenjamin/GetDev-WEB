@@ -21,6 +21,17 @@
     ?>
     <div class="container-fluid" style="background-color: #01031b;">
         <div class="container">
+            <nav class='row nav nav-tabs border-0'>
+                <div class='offset-sm-3 col-sm-2'>
+                    <a class='nav-link text-center rounded-1 my-2 text-white fs-4' href='index.php' style='background-color: #36397B'>Início</a>
+                </div>
+                <div class='col-sm-2'>
+                    <a class='nav-link text-center rounded-1 my-2 text-white fs-4' href='../TelaUsuario/Usuario.php' style="background-color: #181B5A;">Freelancers</a>
+                </div>
+                <div class='col-sm-2'>
+                    <a class='nav-link text-center rounded-1 my-2 text-white fs-4' href='../TelaServiço/Servico.php' style="background-color: #181B5A;">Serviços</a>
+                </div>
+            </nav>
             <div class="row">
                 <div class="col-sm-12 mt-3">
                     <h1 class="text-white text-center">Bem vindo a GetDev, uma plataforma para programadores
@@ -161,17 +172,9 @@
             </div>
         </div>
     </div>
-    <footer class="text-center text-lg-start" style="background-color: #070a39;">
-        <div class="container d-flex justify-content-center py-4">
-            <div class="text-center text-white" style="background-color: rgba(0, 0, 0, 0.2);">
-                <p></p>
-                © 2023 Copyright:
-                <a class="text-white" href="https://getdev.com.br/">GetDev.com.br</a>
-                <a class="text-white"  href="#">Termos de uso</a>
-                <a class="text-white" href="#">Política de privacidade</a>
-            </div>
-        </div>
-    </footer>
+    <?php
+        include_once("footer.php");
+    ?>
     <script src="../../Bootstrap/js/bootstrap.js"></script>
 </body>
 

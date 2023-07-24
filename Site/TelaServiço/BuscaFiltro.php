@@ -1,6 +1,7 @@
 <?php
     include_once('../../Conexão/conexao.php');
 
+    $vazio = true;
     $situacao = false;
     $opcao1 = false;
     $opcao2 = false;
@@ -119,6 +120,7 @@
                     </div>
                     ";
                     $situacao = false;
+                    $vazio = false;
                 }
             }
         }
