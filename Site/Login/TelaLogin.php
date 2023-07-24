@@ -86,7 +86,7 @@
                     <div class="col-sm-12 text-end">
                         <button class = "btn text-light" id="btnVoltar" name="btn" onclick="Voltar()">Voltar</button>
                         <button class = "btn btn-primary text-light" id="btnLogin" name="btn" onclick="Login()">Login</button>
-                        <p><?= $erro ?></p>
+                        <p class="text-light"><?= $erro ?></p>
                     </div>
                 </div>
             </form>

@@ -162,12 +162,12 @@
                     <h1>O que está esperando?!</h1>
                 </div>
                 <div class="col-sm-5 text-center">
-                    <button class="btn btn-primary btn-lg" style="background-color: #54456b;">
+                    <a href="../TelaCadastro/TelaCadastro.php" class="btn btn-primary btn-lg" style="background-color: #54456b;">
                         Cadastrar
-                    </button>
-                    <button class="btn btn-primary btn-lg" style="background-color: #54456b;">
+                    </a>
+                    <a href="../Login/TelaLogin.php" class="btn btn-primary btn-lg" style="background-color: #54456b;">
                         Entrar
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

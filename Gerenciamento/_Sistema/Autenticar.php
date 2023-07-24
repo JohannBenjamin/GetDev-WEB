@@ -8,7 +8,7 @@ session_start();
 
 if($_SESSION)
 {
-    if(isset($_SESSION['id_Usuario']) && isset($_SESSION['nome_Usuario']) && isset($_SESSION['usuario_Usuario'])))
+    if(isset($_SESSION['id_Usuario']) && isset($_SESSION['nome_Usuario']) && isset($_SESSION['usuario_Usuario']))
     {
         $idUsuarioLogin = $_SESSION['id_Usuario'];
         $nomeUsuarioLogin = $_SESSION['nome_Usuario'];
@@ -17,11 +17,11 @@ if($_SESSION)
     }
     else
     {
-        header('location:TelaLogin.php');
+        header('location:../../Site/Login/TelaLogin.php');
     }
 }
 else
 {
-    header('location:TelaLogin.php');
+    header('location:../../Site/Login/TelaLogin.php');
 }
 ?>

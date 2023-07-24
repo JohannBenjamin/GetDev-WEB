@@ -8,7 +8,7 @@
 
             </div>
             <div class="col-sm-6 align-self-center text-end">
-                <a class="btn btn-primary">TESTE</a>
+                <a class="btn btn-primary" href="../../Gerenciamento/_Sistema/TelaInicio.php">Gerenciamento</a>
                 <div class="btn-group btn-group-justified px-3">
                     <div class="btn-group">
                         <a class="btn btn-outline-success" name="btn" id="btnEntrar"  href="">Perfil</a>

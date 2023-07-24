@@ -48,7 +48,7 @@
                                     </div>
                                 </div>
                                 <div class='row'>
-                                    <p class='text-center my-2 rounded-3 py-1' style='max-height: 10vh; background-color: #686BA3'>$textoDesc</p>
+                                    <p class='text-center my-2 rounded-3 py-1' style='max-height: 14vh; background-color: #686BA3'>$textoDesc</p>
                                 </div>
                                 <div class='d-inline-block'>
                                     $btnLinguagens

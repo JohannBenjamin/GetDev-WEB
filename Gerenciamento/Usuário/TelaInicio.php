@@ -18,7 +18,7 @@
 </head>
 <body>
     <?php
-        include_once("Autenticar.php");
+        include_once("../_Sistema/Autenticar.php");
 
         if($nomeUsuarioLogin != "admin"){
             header("Location:../../Site/Login/TelaLogin.php");
@@ -35,7 +35,7 @@
             <div class="col-sm-2">
                 <div class="card mb-4">
                     <div class="card-body text-center">
-                        <img src="3093000.png" alt="usuario" class="rounded-circle img-fluid" style="width: 150px;"> <!-- terminar o card recem copiados-->
+                        <img src="../_Sistema/3093000.png" alt="usuario" class="rounded-circle img-fluid" style="width: 150px;"> <!-- terminar o card recem copiados-->
                         <h5 class="my-3"><?=$usuarioUsuarioLogin?></h5>
                         <p class="text-muted mb-1"><?=$nomeUsuarioLogin?></p>
                         <div class="d-flex justify-content-center mb-2">
@@ -48,10 +48,10 @@
                 <nav>
                     <ul class="nav nav-pills flex-column mb-0 align-items-center" id="menu">
                         <li class="nav-item rounded-2 my-2" <?=(!$_GET?"style='background-color: #36397B;'": "style='background-color: #686BA3'")?>>
-                            <a href="TelaInicio.php" class="nav-link text-white text-center fs-5" style='width:10vw;'>Início</a>
+                            <a href="../_Sistema/TelaInicio.php" class="nav-link text-white text-center fs-5" style='width:10vw;'>Início</a>
                         </li>
                         <li class="nav-item rounded-2 my-2" <?=($tela == "Usuario"?"style='background-color: #36397B;'": "style='background-color: #686BA3'")?>>
-                            <a href="../Usuário/TelaInicio.php?tela=Usuario" class="nav-link text-white text-center fs-5" style='width:10vw;'>Usuário</a>
+                            <a href="TelaInicio.php?tela=Usuario" class="nav-link text-white text-center fs-5" style='width:10vw;'>Usuário</a>
                         </li>
                         <li class="nav-item rounded-2 my-2" <?=($tela == "Servico"?"style='background-color: #36397B;'": "style='background-color: #686BA3'")?>>
                             <a href="../Serviço/TelaInicio.php?tela=Servico" class="nav-link text-white text-center fs-5" style='width:10vw;'>Serviço</a>
@@ -75,7 +75,9 @@
                 </nav>
             </div>
             <div class="col-sm-10">
-                <h1>Bem Vindo <?= $usuarioUsuarioLogin ?>!! Comece a gerenciar.</h1>
+                <?php
+                    include_once("TelaUsuario.php");
+                ?>
             </div>
         </div>
     </div>

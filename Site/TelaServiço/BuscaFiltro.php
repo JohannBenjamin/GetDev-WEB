@@ -2,7 +2,7 @@
     include_once('../../Conexão/conexao.php');
 
     $vazio = true;
-    $situacao = false;
+    $situacao = true;
     $opcao1 = false;
     $opcao2 = false;
     $opcao3 = false;
@@ -65,18 +65,18 @@
                 include("BuscaPropostas.php");
 
                 if($opcao1) {
-                    if($numPropostas >= 0 && $numPropostas <= 1){
-                        $situacao = TRUE;
+                    if(!($numPropostas >= 0 && $numPropostas <= 1)){
+                        $situacao = false;
                     }
                 }
                 if($opcao2) {
-                    if($numPropostas >= 2 && $numPropostas <= 4){
-                        $situacao = TRUE;
+                    if(!($numPropostas >= 2 && $numPropostas <= 4)){
+                        $situacao = false;
                     }
                 }
                 if($opcao3) {
-                    if($numPropostas >= 5){
-                        $situacao = TRUE;
+                    if(!($numPropostas >= 5)){
+                        $situacao = false;
                     }
                 }
 
@@ -106,7 +106,7 @@
                                         </div>
                                     </div>
                                     <div class='row'>
-                                        <p class='text-center my-2 rounded-3 py-1' style='max-height: 10vh; background-color: #686BA3'>$textoDesc</p>
+                                        <p class='text-center my-2 rounded-3 py-1' style='max-height: 14vh; background-color: #686BA3'>$textoDesc</p>
                                     </div>
                                     <div class='d-inline-block'>
                                         $btnLinguagens
@@ -119,7 +119,7 @@
                         </div>
                     </div>
                     ";
-                    $situacao = false;
+                    $situacao = true;
                     $vazio = false;
                 }
             }
