@@ -11,8 +11,8 @@
                 <a class="btn btn-primary" href="../../Gerenciamento/_Sistema/TelaInicio.php">Gerenciamento</a>
                 <div class="btn-group btn-group-justified px-3">
                     <div class="btn-group">
-                        <a class="btn btn-outline-success" name="btn" id="btnEntrar"  href="">Perfil</a>
-                        <button class="btn btn-outline-success" name="btn" id="btnEntrar" onclick="Sair()">Sair</button>
+                        <a class="btn btn-outline-primary" name="btn" id="btnEntrar"  href="">Perfil</a>
+                        <button class="btn btn-outline-primary" name="btn" id="btnEntrar" onclick="Sair()">Sair</button>
                     </div>
                 </div>
             </div>

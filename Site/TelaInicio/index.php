@@ -156,20 +156,53 @@
                     </p>
                 </div>
             </div>
-            <hr class="featurette-divider">
-            <div class="row p-3">
-                <div class="col-sm-7 text-white text-center">
-                    <h1>O que está esperando?!</h1>
-                </div>
-                <div class="col-sm-5 text-center">
-                    <a href="../TelaCadastro/TelaCadastro.php" class="btn btn-primary btn-lg" style="background-color: #54456b;">
-                        Cadastrar
-                    </a>
-                    <a href="../Login/TelaLogin.php" class="btn btn-primary btn-lg" style="background-color: #54456b;">
-                        Entrar
-                    </a>
-                </div>
-            </div>
+            <?php
+                //session_start();
+                if($_SESSION)
+                {
+                    if(isset($_SESSION['id_Usuario'])){
+                        echo '<br>';
+                    }
+                    else{
+                        echo "
+                        <hr class='featurette-divider'>
+                        <div class='row p-3'>
+                            <div class='col-sm-7 text-white text-center'>
+                                <h1>O que está esperando?!</h1>
+                            </div>
+                            <div class='col-sm-5 text-center'>
+                                <a href='../TelaCadastro/TelaCadastro.php' class='btn btn-primary btn-lg' style='background-color: #54456b;'>
+                                    Cadastrar
+                                </a>
+                                <a href='../Login/TelaLogin.php' class='btn btn-primary btn-lg' style='background-color: #54456b;'>
+                                    Entrar
+                                </a>
+                            </div>
+                        </div>
+                        ";
+                    }
+                }
+                else {
+                    echo "
+                        <hr class='featurette-divider'>
+                        <div class='row p-3'>
+                            <div class='col-sm-7 text-white text-center'>
+                                <h1>O que está esperando?!</h1>
+                            </div>
+                            <div class='col-sm-5 text-center'>
+                                <a href='../TelaCadastro/TelaCadastro.php' class='btn btn-primary btn-lg' style='background-color: #54456b;'>
+                                    Cadastrar
+                                </a>
+                                <a href='../Login/TelaLogin.php' class='btn btn-primary btn-lg' style='background-color: #54456b;'>
+                                    Entrar
+                                </a>
+                            </div>
+                        </div>
+                        ";
+                }
+                
+            ?>
+            
         </div>
     </div>
     <?php

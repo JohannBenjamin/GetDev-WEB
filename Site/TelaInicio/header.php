@@ -7,11 +7,11 @@
             <div class="col-sm">
 
             </div>
-            <div class="col-sm-6 align-self-center text-end">
-                <div class="btn-group btn-group-justified px-3">
+            <div class="col-sm-9 align-self-center text-end">
+                <div class="btn-group btn-group-justified">
                     <div class="btn-group">
-                        <a class="btn btn-outline-success" name="btn" id="btnCadastrar" href="../TelaCadastro/TelaCadastro.php">Cadastrar</a>
-                        <a class="btn btn-outline-success" name="btn" id="btnEntrar"  href="../Login/TelaLogin.php">Entrar</a>
+                        <a class="btn btn-outline-primary" name="btn" id="btnCadastrar" href="../TelaCadastro/TelaCadastro.php">Cadastrar</a>
+                        <a class="btn btn-outline-primary" name="btn" id="btnEntrar"  href="../Login/TelaLogin.php">Entrar</a>
                     </div>
                 </div>
             </div>

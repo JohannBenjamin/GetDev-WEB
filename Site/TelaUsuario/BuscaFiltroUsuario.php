@@ -44,7 +44,9 @@
             inner join UsuarioLinguagem as UL on UL.id_Usuario_UsuarioLinguagem = U.id_Usuario
             inner join Linguagem as L on L.id_Linguagem = UL.id_Linguagem_UsuarioLinguagem
             where U.status_Usuario like 'Ativo' $texto
+            group by U.id_Usuario
             order by U.avaliacao_Usuario DESC
+           
         ");
         
         if ($sql->rowCount()>=1) {
